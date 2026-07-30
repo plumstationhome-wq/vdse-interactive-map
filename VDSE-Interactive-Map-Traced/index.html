@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vista Del Sol Estates | Interactive Community Lot Map</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <img src="images/vdse-logo.jpeg" alt="Vista Del Sol Estates logo" class="logo">
+  <div>
+    <h1>Vista Del Sol Estates</h1>
+    <p>Interactive Community Lot Map</p>
+    <span>Apple Valley, California</span>
+  </div>
+</header>
+
+<main>
+  <section class="toolbar" aria-label="Map tools">
+    <div class="search-wrap">
+      <label for="search">Search by lot number or address</label>
+      <div class="search-row">
+        <input id="search" type="search" autocomplete="off" placeholder="Example: Lot 102 or 19443 Coati">
+        <button id="searchBtn" type="button">Search</button>
+      </div>
+      <div id="suggestions" class="suggestions" role="listbox"></div>
+    </div>
+    <div class="controls">
+      <button id="zoomIn" title="Zoom in">+</button>
+      <button id="zoomOut" title="Zoom out">−</button>
+      <button id="reset" type="button">Reset View</button>
+    </div>
+  </section>
+
+  <section class="map-card">
+    <div id="mapViewport" class="map-viewport" tabindex="0" aria-label="Interactive lot map. Drag to pan and use controls to zoom.">
+      <div id="mapStage" class="map-stage">
+        <img src="images/community-map.png" id="baseMap" alt="Vista Del Sol Estates subdivision map">
+        <svg id="overlay" viewBox="0 0 1064 1436" preserveAspectRatio="none" aria-label="Interactive lot areas"></svg>
+      </div>
+      <div id="tooltip" class="tooltip" role="dialog" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="below-map">
+    <details open class="legend">
+      <summary>Legend</summary>
+      <div><span class="swatch boundary"></span> Lot boundaries shown on the traced base map</div>
+      <div><span class="swatch hover"></span> Hovered or selected lot highlight</div>
+      <div><span class="swatch search-hit"></span> Search result</div>
+      <div><span class="number-sample">102</span> Lot number shown on the map</div>
+    </details>
+    <aside class="map-info">
+      <strong>Map Information</strong>
+      <span>126 lots</span>
+      <span>Search by lot number or address</span>
+      <span>Hover or tap for property information</span>
+      <span>Last updated: July 30, 2026</span>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Disclaimer:</strong> The Vista Del Sol Estates Interactive Community Lot Map is provided solely as a convenience and informational resource for homeowners, residents, visitors, contractors, and Association representatives. It is not intended to be a legal survey or to establish property lines, easements, or ownership. Property boundaries, dimensions, lot configurations, and other information displayed are approximate and should not be relied upon for legal, engineering, surveying, or construction purposes. In the event of any discrepancy, the recorded subdivision map, the Association's governing documents, and official records maintained by the County of San Bernardino shall control.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
